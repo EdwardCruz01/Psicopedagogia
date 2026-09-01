@@ -94,20 +94,25 @@ const cvSteps = [
 
 const networkSpecialization = {
   summary: "Aprende a diseñar, configurar, monitorear y proteger redes que conectan personas, aplicaciones y servicios. Esta ruta une fundamentos de Internet, infraestructura, nube y telecomunicaciones con práctica guiada.",
+  theory: {
+    introduction: "Las redes y telecomunicaciones son la base que permite que una universidad, una empresa o una ciudad intercambie información. Una red no es solamente conectar cables: implica planificar direcciones IP, elegir medios de transmisión, segmentar usuarios, enrutar paquetes, publicar servicios y observar el comportamiento del tráfico.",
+    operation: "Cuando envías un mensaje, visitas una página o accedes a una plataforma educativa, la información se divide en paquetes. Switches y puntos de acceso conectan los dispositivos dentro de una red; routers eligen caminos entre redes; DNS traduce nombres a direcciones; DHCP facilita la configuración; y los controles de seguridad ayudan a que solo las personas y servicios autorizados puedan comunicarse.",
+    professional: "El profesional de esta área diseña soluciones que deben ser disponibles, seguras y escalables. Puede trabajar desde el cableado y la configuración de equipos hasta redes definidas por software, nubes híbridas, monitoreo, automatización y soporte de servicios críticos.",
+  },
   focus: [
     ["Conectividad", "Comprende cómo viajan los datos desde una red local hasta Internet y cómo se relacionan los dispositivos."],
     ["Diseño y operación", "Planifica topologías, direccionamiento, VLAN, routing y servicios para redes confiables."],
     ["Seguridad y soporte", "Detecta fallas, analiza tráfico y aplica controles para mantener la disponibilidad y proteger la información."],
   ],
   technologies: [
-    { name: "Cisco", mark: "C", tone: "cisco", description: "Switching, routing y certificación." },
-    { name: "Packet Tracer", mark: "PT", tone: "packet", description: "Simulación de topologías y prácticas." },
-    { name: "Linux", mark: "L", tone: "linux", description: "Servicios, terminal y administración." },
-    { name: "Wireshark", mark: "W", tone: "wireshark", description: "Captura y análisis de paquetes." },
-    { name: "Python", mark: "Py", tone: "python", description: "Automatización y scripts de red." },
-    { name: "AWS VPC", mark: "AWS", tone: "aws", description: "Redes virtuales y nube." },
-    { name: "Docker", mark: "◈", tone: "docker", description: "Servicios y laboratorios reproducibles." },
-    { name: "Ansible", mark: "A", tone: "ansible", description: "Configuración automatizada." },
+    { name: "Cisco", mark: "C", tone: "cisco", image: "assets/technologies/cisco.png", description: "Switching, routing y certificación." },
+    { name: "Packet Tracer", mark: "PT", tone: "packet", image: "assets/technologies/packet-tracer.png", description: "Simulación de topologías y prácticas." },
+    { name: "Linux", mark: "L", tone: "linux", image: "assets/technologies/linux.png", description: "Servicios, terminal y administración." },
+    { name: "Wireshark", mark: "W", tone: "wireshark", image: "assets/technologies/wireshark.png", description: "Captura y análisis de paquetes." },
+    { name: "Python", mark: "Py", tone: "python", image: "assets/technologies/python.png", description: "Automatización y scripts de red." },
+    { name: "AWS VPC", mark: "AWS", tone: "aws", image: "assets/technologies/aws-vpc.png", description: "Redes virtuales y nube." },
+    { name: "Docker", mark: "◈", tone: "docker", image: "assets/technologies/docker.png", description: "Servicios y laboratorios reproducibles." },
+    { name: "Ansible", mark: "A", tone: "ansible", image: "assets/technologies/ansible.png", description: "Configuración automatizada." },
   ],
   progress: [
     ["Fundamentos", "OSI, TCP/IP, Ethernet y direccionamiento IP"],
@@ -119,10 +124,17 @@ const networkSpecialization = {
   ],
   jobs: ["Administrador de redes", "Ingeniero NOC", "Soporte de infraestructura", "Especialista de telecomunicaciones", "Cloud network associate"],
   companies: [
-    ["Cisco", "Redes y conectividad", "Diseño, soporte y operación de infraestructura."],
-    ["Telefónica", "Telecomunicaciones", "Conectividad, servicios móviles y fibra."],
-    ["IBM", "Tecnología empresarial", "Infraestructura híbrida, seguridad y nube."],
-    ["Proveedores ISP", "Internet y soporte", "Operación de enlaces, clientes y centros de monitoreo."],
+    ["Entel Perú", "Perú · Telecomunicaciones", "Conectividad móvil y fija, fibra, servicios TI y operación de red.", "https://www.entel.pe/contacto/informacion-corporativa"],
+    ["Movistar Perú", "Perú · Telecomunicaciones", "Red móvil, fibra óptica, servicios empresariales y soporte de conectividad.", "https://www.movistar.com.pe/"],
+    ["Claro Perú", "Perú · Telecomunicaciones", "Telefonía móvil, Internet, redes empresariales y despliegue de infraestructura.", "https://www.claro.com.pe/"],
+    ["Cisco", "Global · Networking", "Diseño, soporte, seguridad, automatización y operación de infraestructura.", "https://www.cisco.com/"],
+    ["Amazon Web Services", "Global · Cloud", "VPC, subredes, routing, conectividad híbrida y arquitectura de nube.", "https://aws.amazon.com/"],
+    ["Cloudflare", "Global · Red y seguridad", "Rendimiento web, DNS, CDN, edge networking y seguridad de aplicaciones.", "https://www.cloudflare.com/"],
+  ],
+  characters: [
+    ["Vint Cerf", "Arquitectura de Internet", "Co-diseñó TCP/IP y ayudó a establecer la arquitectura que permite interconectar redes a escala mundial.", "https://www.internetsociety.org/author/cerf/"],
+    ["Radia Perlman", "Switching y protocolos", "Su trabajo sobre Spanning Tree permitió construir redes Ethernet más estables y tolerantes a bucles.", "https://news.internetsociety.org/the-magic-box-and-the-spanning-tree-radia-perlman-profiled-in-hidden-heroes-series/"],
+    ["Tim Berners-Lee", "Web y estándares", "Inventó la World Wide Web y definió tecnologías que usan las redes para publicar y compartir información.", "https://www.w3.org/People/Berners-Lee/"],
   ],
 };
 
