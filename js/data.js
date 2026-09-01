@@ -132,9 +132,9 @@ const networkSpecialization = {
     ["Cloudflare", "Global · Red y seguridad", "Rendimiento web, DNS, CDN, edge networking y seguridad de aplicaciones.", "https://www.cloudflare.com/"],
   ],
   characters: [
-    ["Vint Cerf", "Arquitectura de Internet", "Co-diseñó TCP/IP y ayudó a establecer la arquitectura que permite interconectar redes a escala mundial.", "https://www.internetsociety.org/author/cerf/"],
-    ["Radia Perlman", "Switching y protocolos", "Su trabajo sobre Spanning Tree permitió construir redes Ethernet más estables y tolerantes a bucles.", "https://news.internetsociety.org/the-magic-box-and-the-spanning-tree-radia-perlman-profiled-in-hidden-heroes-series/"],
-    ["Tim Berners-Lee", "Web y estándares", "Inventó la World Wide Web y definió tecnologías que usan las redes para publicar y compartir información.", "https://www.w3.org/People/Berners-Lee/"],
+    ["Vint Cerf", "Arquitectura de Internet", "Co-diseñó TCP/IP y ayudó a establecer la arquitectura que permite interconectar redes a escala mundial.", "https://www.internetsociety.org/author/cerf/", "assets/characters/vint-cerf.png"],
+    ["Radia Perlman", "Switching y protocolos", "Su trabajo sobre Spanning Tree permitió construir redes Ethernet más estables y tolerantes a bucles.", "https://news.internetsociety.org/the-magic-box-and-the-spanning-tree-radia-perlman-profiled-in-hidden-heroes-series/", "assets/characters/radia-perlman.png"],
+    ["Tim Berners-Lee", "Web y estándares", "Inventó la World Wide Web y definió tecnologías que usan las redes para publicar y compartir información.", "https://www.w3.org/People/Berners-Lee/", "assets/characters/tim-berners-lee.png"],
   ],
 };
 
