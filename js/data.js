@@ -46,7 +46,7 @@ const specializations = [
   { id: "devops", name: "DevOps", icon: "↗", color: "mint", technologies: ["GitHub", "Docker", "CI/CD"] },
   { id: "web", name: "Desarrollo Web", icon: "◫", color: "yellow", technologies: ["HTML", "CSS", "React"] },
   { id: "mobile", name: "Aplicaciones Móviles", icon: "▯", color: "lilac", technologies: ["Kotlin", "Flutter", "Firebase"] },
-  { id: "networks", name: "Redes y Telecomunicaciones", icon: "⌘", color: "blue", technologies: ["Cisco", "TCP/IP", "Linux"] },
+  { id: "networks", name: "Redes y Telecomunicaciones", icon: "⌘", image: "assets/networks-logo.png", color: "blue", technologies: ["Cisco", "TCP/IP", "Linux"] },
   { id: "systems", name: "Arquitectura de Sistemas", icon: "▦", color: "mint", technologies: ["UML", "SQL", "Cloud"] },
 ];
 

@@ -105,7 +105,7 @@ function renderSpecializations() {
   return `
     <div class="detail-content">
       <div class="detail-lead"><span class="detail-icon yellow">💻</span><div><p class="eyebrow">ÁREAS DE INGENIERÍA DE SISTEMAS</p><h2>Especializaciones</h2><p>Explora las ramas que pueden conectar con tus intereses y descubre qué tecnologías comenzar a aprender.</p></div></div>
-      <div class="specialization-grid">${specializationData.map(item => `<article class="specialization-card color-${item.color}" data-specialization="${item.id}" tabindex="0"><div class="specialization-icon">${item.icon}</div><h3>${item.name}</h3><div class="tech-list">${item.technologies.map(technology => `<span>${technology}</span>`).join("")}</div><button class="text-button">Explorar área →</button></article>`).join("")}</div>
+      <div class="specialization-grid">${specializationData.map(item => `<article class="specialization-card color-${item.color}" data-specialization="${item.id}" tabindex="0"><div class="specialization-icon${item.image ? " has-image" : ""}">${item.image ? `<img src="${item.image}" alt="Logo de ${item.name}" />` : item.icon}</div><h3>${item.name}</h3><div class="tech-list">${item.technologies.map(technology => `<span>${technology}</span>`).join("")}</div><button class="text-button">Explorar área →</button></article>`).join("")}</div>
       <div class="future-note"><span>⌁</span><p>El detalle de cada área puede crecer posteriormente con tecnologías, roadmap, proyectos y un test de orientación.</p></div>
     </div>
   `;
