@@ -1,4 +1,5 @@
-const { conventions: conventionData, cvSteps: tutorialSteps, professionalSections: sectionData, profileByArea: profileData, specializations: specializationData } = window.professionalData;
+const { conventions: conventionData, cvSteps: tutorialSteps, professionalSections: sectionData, profileByArea: profileData, specializations: specializationData, networkSpecialization: networkData } = window.professionalData;
+let networkProgress = 2;
 
 const app = document.querySelector("#app");
 const moduleRoot = document.querySelector("#professional-module");
@@ -110,6 +111,34 @@ function renderSpecializations() {
   `;
 }
 
+function renderNetworkSpecialization() {
+  const currentProgress = networkData.progress.map((step, index) => ({ step, index, completed: index < networkProgress }));
+  app.innerHTML = `
+    <section class="professional-detail view-enter">
+      <button class="back-button" data-back-specializations>← Volver a Especializaciones</button>
+      <div class="network-detail-shell">
+        <div class="network-hero">
+          <div class="network-hero-copy"><p class="eyebrow">RUTA DE APRENDIZAJE · INGENIERÍA DE SISTEMAS</p><h1>Redes y<br /><span>Telecomunicaciones</span></h1><p>${networkData.summary}</p><div class="network-tags"><span>Conectividad</span><span>Infraestructura</span><span>Seguridad</span></div></div>
+          <div class="network-hero-visual"><div class="network-image-wrap"><img src="src/modules/professional/assets/hero-professional.jpg" alt="Estudiantes aprendiendo tecnología" /></div><div class="network-orbit orbit-one"></div><div class="network-orbit orbit-two"></div><div class="network-node node-one">⌁</div><div class="network-node node-two">↔</div><div class="network-node node-three">◉</div></div>
+        </div>
+
+        <section class="network-section"><div class="network-section-heading"><div><p class="eyebrow">¿QUÉ APRENDERÁS?</p><h2>Conecta la teoría con problemas reales</h2></div><span class="section-counter">01 / 04</span></div><div class="focus-grid">${networkData.focus.map((item, index) => `<article class="focus-card"><span>0${index + 1}</span><h3>${item[0]}</h3><p>${item[1]}</p></article>`).join("")}</div></section>
+
+        <section class="network-section technology-section"><div class="network-section-heading"><div><p class="eyebrow">HERRAMIENTAS DE LA RUTA</p><h2>Tecnologías para practicar</h2><p class="section-description">Empieza con conceptos sólidos y usa estas herramientas para construir laboratorios, observar el tráfico y automatizar tareas.</p></div><span class="section-counter">02 / 04</span></div><div class="network-tech-grid">${networkData.technologies.map(tech => `<article class="network-tech-card"><span class="tech-logo tech-${tech.tone}">${tech.mark}</span><div><h3>${tech.name}</h3><p>${tech.description}</p></div></article>`).join("")}</div></section>
+
+        <section class="network-section progress-section"><div class="network-section-heading"><div><p class="eyebrow">TU PROGRESO</p><h2>Avanza como en un camino de misiones</h2><p class="section-description">Completa cada nivel cuando puedas explicar el concepto y aplicarlo en un laboratorio. Tu avance queda listo para conectarse después a una cuenta de estudiante.</p></div><span class="section-counter">03 / 04</span></div><div class="progress-summary"><div><strong>Nivel ${networkProgress} de ${networkData.progress.length}</strong><span>Ruta iniciada</span></div><div class="progress-bar"><i style="width: ${(networkProgress / networkData.progress.length) * 100}%"></i></div><b>${Math.round((networkProgress / networkData.progress.length) * 100)}%</b></div><div class="learning-path">${currentProgress.map(({ step, index, completed }) => `<button class="path-step ${completed ? "completed" : "locked"}" data-network-progress="${index + 1}"><span class="path-bubble">${completed ? "✓" : index + 1}</span><strong>${step[0]}</strong><small>${step[1]}</small>${index < networkData.progress.length - 1 ? "<i class=path-line></i>" : ""}</button>`).join("")}</div><p class="progress-hint">Haz clic en un nivel para marcarlo como alcanzado y explorar el siguiente reto.</p></section>
+
+        <section class="network-section explore-section"><div class="network-section-heading"><div><p class="eyebrow">EXPLORA MÁS</p><h2>¿En qué se enfoca esta especialidad?</h2></div><span class="section-counter">04 / 04</span></div><div class="explore-grid"><article class="explore-panel"><span class="panel-icon">⌘</span><h3>¿Dónde puedes trabajar?</h3><p>En centros de datos, proveedores de Internet, empresas de telecomunicaciones, áreas de TI, instituciones públicas, universidades y equipos que administran servicios en la nube.</p><ul>${networkSpecialization.jobs.slice(0, 4).map(job => `<li>${job}</li>`).join("")}</ul></article><article class="explore-panel"><span class="panel-icon">⌁</span><h3>¿Qué problemas resuelves?</h3><p>Interrupciones de conectividad, lentitud, mala segmentación, pérdida de paquetes, accesos no autorizados y configuraciones difíciles de mantener.</p><div class="mini-metrics"><span><b>Disponibilidad</b><small>redes confiables</small></span><span><b>Seguridad</b><small>tráfico protegido</small></span></div></article><article class="explore-panel"><span class="panel-icon">↗</span><h3>¿Qué perfil construyes?</h3><p>Una persona analítica, ordenada y curiosa, capaz de documentar una red, comunicarse con usuarios y tomar decisiones técnicas responsables.</p><div class="skill-pills"><span>Diagnóstico</span><span>Documentación</span><span>Trabajo en equipo</span></div></article></div></section>
+
+        <section class="network-companies"><div><p class="eyebrow">CAMPO PROFESIONAL</p><h2>Empresas y entornos donde puedes crecer</h2><p>La experiencia en redes te abre puertas en organizaciones que necesitan conectividad estable, segura y escalable.</p></div><div class="company-grid">${networkData.companies.map(company => `<article class="company-card"><span class="company-logo">${company[0].slice(0, 2).toUpperCase()}</span><div><h3>${company[0]}</h3><small>${company[1]}</small><p>${company[2]}</p></div></article>`).join("")}</div></section>
+
+        <section class="network-test-cta"><div><p class="eyebrow">ORIENTACIÓN</p><h2>¿Esta especialidad es para ti?</h2><p>Responde un test breve para reconocer si disfrutas resolver problemas de conectividad, analizar sistemas y aprender de forma práctica.</p></div><button class="primary-button" data-network-test>Realizar test <span class="button-icon">→</span></button></section>
+        <div class="network-test-panel" id="network-test-panel" aria-live="polite"><div><span class="test-mark">✦</span><div><strong>Test preparado</strong><p>Próximamente podrás responder preguntas y recibir una recomendación personalizada sobre tu ruta profesional.</p></div></div><button class="text-button" data-close-network-test>Cerrar</button></div>
+      </div>
+    </section>
+  `;
+}
+
 function renderProfile() {
   const profile = profileData.software;
   return `
@@ -171,8 +200,14 @@ document.addEventListener("click", event => {
   const specialization = event.target.closest("[data-specialization]");
   if (specialization) {
     const item = specializationData.find(entry => entry.id === specialization.dataset.specialization);
+    if (item?.id === "networks") return renderNetworkSpecialization();
     if (item) alert(`${item.name}\n\nTecnologías iniciales: ${item.technologies.join(", ")}\n\nAquí podrás agregar la ruta de aprendizaje, proyectos y test de orientación.`);
   }
+  if (event.target.closest("[data-back-specializations]")) return renderDetail("specializations");
+  const progress = event.target.closest("[data-network-progress]");
+  if (progress) { networkProgress = Number(progress.dataset.networkProgress); return renderNetworkSpecialization(); }
+  if (event.target.closest("[data-network-test]")) { document.querySelector("#network-test-panel")?.classList.add("is-open"); return; }
+  if (event.target.closest("[data-close-network-test]")) { document.querySelector("#network-test-panel")?.classList.remove("is-open"); return; }
   if (event.target.closest("[data-cv-action]")) alert("Esta acción está preparada para conectarse con el formulario de CV.");
 });
 

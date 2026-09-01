@@ -92,4 +92,38 @@ const cvSteps = [
   ["06", "Proyectos", "Muestra qué construiste, con qué herramientas y qué aprendiste."],
 ];
 
-window.professionalData = { professionalSections, specializations, conventions, profileByArea, cvSteps };
+const networkSpecialization = {
+  summary: "Aprende a diseñar, configurar, monitorear y proteger redes que conectan personas, aplicaciones y servicios. Esta ruta une fundamentos de Internet, infraestructura, nube y telecomunicaciones con práctica guiada.",
+  focus: [
+    ["Conectividad", "Comprende cómo viajan los datos desde una red local hasta Internet y cómo se relacionan los dispositivos."],
+    ["Diseño y operación", "Planifica topologías, direccionamiento, VLAN, routing y servicios para redes confiables."],
+    ["Seguridad y soporte", "Detecta fallas, analiza tráfico y aplica controles para mantener la disponibilidad y proteger la información."],
+  ],
+  technologies: [
+    { name: "Cisco", mark: "C", tone: "cisco", description: "Switching, routing y certificación." },
+    { name: "Packet Tracer", mark: "PT", tone: "packet", description: "Simulación de topologías y prácticas." },
+    { name: "Linux", mark: "L", tone: "linux", description: "Servicios, terminal y administración." },
+    { name: "Wireshark", mark: "W", tone: "wireshark", description: "Captura y análisis de paquetes." },
+    { name: "Python", mark: "Py", tone: "python", description: "Automatización y scripts de red." },
+    { name: "AWS VPC", mark: "AWS", tone: "aws", description: "Redes virtuales y nube." },
+    { name: "Docker", mark: "◈", tone: "docker", description: "Servicios y laboratorios reproducibles." },
+    { name: "Ansible", mark: "A", tone: "ansible", description: "Configuración automatizada." },
+  ],
+  progress: [
+    ["Fundamentos", "OSI, TCP/IP, Ethernet y direccionamiento IP"],
+    ["Switching", "VLAN, trunking, STP y redes locales"],
+    ["Routing", "Rutas estáticas, OSPF y diseño entre redes"],
+    ["Servicios", "DNS, DHCP, NAT y alta disponibilidad"],
+    ["Seguridad", "Firewalls, VPN, monitoreo y respuesta"],
+    ["Proyecto final", "Diseña, documenta y presenta una red funcional"],
+  ],
+  jobs: ["Administrador de redes", "Ingeniero NOC", "Soporte de infraestructura", "Especialista de telecomunicaciones", "Cloud network associate"],
+  companies: [
+    ["Cisco", "Redes y conectividad", "Diseño, soporte y operación de infraestructura."],
+    ["Telefónica", "Telecomunicaciones", "Conectividad, servicios móviles y fibra."],
+    ["IBM", "Tecnología empresarial", "Infraestructura híbrida, seguridad y nube."],
+    ["Proveedores ISP", "Internet y soporte", "Operación de enlaces, clientes y centros de monitoreo."],
+  ],
+};
+
+window.professionalData = { professionalSections, specializations, conventions, profileByArea, cvSteps, networkSpecialization };
